@@ -84,7 +84,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // At this point all the potential questions have been found.
     // console.log(matches);
   
+
+    function shuffle(array) { 
+
+      for(let i = array.length - 1; i > 0; i--){
+          const j = Math.floor(Math.random() * i)
+          const temp = array[i]
+          array[i] = array[j]
+          array[j] = temp
+        }
+    
+    }
+
+    let ranQuestions = [];
+
+    for(let i=0; i<questions.length; i++)
+    {
+      ranQuestions[i] = i;
+    }
+
+
+
+
     function start() {
+      shuffle(ranQuestions);
       questionNum = -1;
       points = 0;
       score.innerHTML = points;
@@ -135,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       //const randomOrder = [...Array(total).keys()].map(num => num + 1);
       //randomOrder.sort(() => Math.random() - 0.5);
 
-      let que = questions[questionNum];
+      let que = questions[ranQuestions[questionNum]];
       question.innerHTML = que.question;
        
       for (let i = 0; i < 4; i++) {
@@ -147,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
   
     function checkAnswer(choice, id) {
-      if (choice == questions[questionNum].answer) {
+      if (choice == questions[ranQuestions[questionNum]].answer) {
         points += 10;
         options[id].classList.add("correct");
         answers.classList.add("disabled");
