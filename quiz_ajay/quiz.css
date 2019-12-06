@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css?family=Fondamento&display=swap");
+ * {
+	 box-sizing: border-box;
+	 margin: 0;
+	 padding: 0;
+}
+ :root {
+	 font-size: calc(1vw + 1vh + 0.5vmin);
+}
+ body {
+	 background: #1b1c2b;
+	 font-family: "Fondamento", cursive;
+	 font-size: 1em;
+}
+ .overlay-fade {
+	 background-color: #1b1c2b;
+	 display: block;
+	 height: 100%;
+	 left: 0%;
+	 opacity: 1;
+	 position: absolute;
+	 top: 0%;
+	 width: 100%;
+	 z-index: 9000;
+}
+ .popup-box, .popup-results {
+	 display: none;
+	 left: 50%;
+	 opacity: 1;
+	 overflow: auto;
+	 padding: 30px;
+	 position: absolute;
+	 top: 50%;
+	 transform: translate(-50%, -50%);
+	 width: 70vw;
+	 z-index: 9100;
+}
+ .popup-text {
+	 color: #eac049;
+	 font-size: 1.2em;
+	 line-height: 1.5;
+	 text-align: center;
+}
+ .popup-text p {
+	 padding: 0.5em;
+}
+ .popup-text h3 {
+	 font-size: 2em;
+	 line-height: 1.5;
+	 padding: 0.5em;
+}
+ .popup-close {
+	 position: relative;
+	 top: 0.5em;
+}
+ .hidden {
+	 display: none;
+}
+ .button-close {
+	 background: #b88732;
+	 border: 0;
+	 color: #fff;
+	 cursor: pointer;
+	 display: inline-block;
+	 font-size: 1em;
+	 margin: 1em;
+	 outline: none;
+	 padding: 1em 2em;
+	 text-align: center;
+	 text-decoration: none;
+	 text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+ .button-close:hover {
+	 background: #ca9436;
+}
+ .container {
+	 align-items: stretch;
+	 align-content: stretch;
+	 display: flex;
+	 flex-direction: column;
+	 height: 100vh;
+	 justify-content: space-around;
+	 text-align: center;
+	 width: 100vw;
+}
+ .grid {
+	 display: grid;
+	 grid-template-columns: 1fr 1fr;
+	 grid-gap: 2rem;
+	 padding: 0 2rem;
+}
+ .feedback {
+	 color: #d5d5e1;
+	 padding-top: 1em;
+	 width: 100%;
+}
+ .left {
+	 float: left;
+}
+ .right {
+	 float: right;
+}
+ .left, .right {
+	 font-size: 1em;
+	 width: 50%;
+}
+ .container h3 {
+	 color: #eac049;
+	 font-size: 2.2em;
+	 width: 100vw;
+}
+ button {
+	 background-color: #292f36;
+	 border-color: #292f36;
+	 display: block;
+	 font-family: "Fondamento", cursive;
+	 font-size: 1.3em;
+	 color: #fff;
+	 padding: 1.3em;
+	 text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+ button:hover {
+	 cursor: pointer;
+	 background-color: #3c4148;
+}
+ button:focus {
+	 outline: 0;
+}
+ .correct {
+	 background-color: #698f3f;
+	 pointer-events: none;
+}
+ .wrong {
+	 background-color: #ca3922;
+	 pointer-events: none;
+}
+ .disabled {
+	 pointer-events: none;
+}
+ .navigation {
+	 padding: 0 2rem;
+}
+ .navigation > button {
+	 background: #b88732;
+	 border: 0;
+	 font-style: italic;
+	 margin: 0 auto;
+	 width: 100%;
+}
+ .navigation > button:hover {
+	 background: #ca9436;
+}
+ @media only screen and (max-width: 450px) {
+	 .grid {
+		 grid-template-columns: 1fr;
+	}
+}
+ 
